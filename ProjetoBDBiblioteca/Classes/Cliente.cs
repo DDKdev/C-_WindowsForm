@@ -98,6 +98,13 @@ namespace ProjetoBDBiblioteca.Classes
                         throw new Exception("O campo nome do Pai não pode estar vazio caso a opção 'Pai desconhecido' não esteja selecionada");
                     }
                 }
+
+                bool validacaoCpf = ValidaCpf(this.Cpf);
+
+                if(validacaoCpf == false)
+                {
+                    throw new Exception("CPF inválido!!!");
+                }
             }
 
             public bool ValidaCpf(string cpf)

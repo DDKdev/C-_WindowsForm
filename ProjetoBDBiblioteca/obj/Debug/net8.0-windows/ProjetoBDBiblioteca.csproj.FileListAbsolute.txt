@@ -10,3 +10,4 @@ C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\ProjetoBDBib
 C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\ProjetoBDBiblioteca\obj\Debug\net8.0-windows\refint\ProjetoBDBiblioteca.dll
 C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\ProjetoBDBiblioteca\obj\Debug\net8.0-windows\ProjetoBDBiblioteca.pdb
 C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\ProjetoBDBiblioteca\obj\Debug\net8.0-windows\ref\ProjetoBDBiblioteca.dll
+C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\ProjetoBDBiblioteca\obj\Debug\net8.0-windows\ProjetoBDBiblioteca.sourcelink.json

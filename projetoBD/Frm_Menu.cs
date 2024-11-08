@@ -1,6 +1,8 @@
 using Microsoft.VisualBasic;
 using ProjetoBDBiblioteca.Classes;
+using ProjetoBDBiblioteca;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.ConstrainedExecution;
 
 namespace projetoBD
 {
@@ -25,7 +27,6 @@ namespace projetoBD
                 C = LeituraFormulario();
                 C.Validate();
                 C.ValidaComplemento();
-                C.ValidaCpf(C.Cpf);
                 MessageBox.Show("Cliente inserido com sucesso", "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ValidationException Ex)
@@ -125,13 +126,43 @@ namespace projetoBD
 
         private void chk_TemPai_CheckedChanged(object sender, EventArgs e)
         {
-            if(chk_TemPai.Checked)
+            if (chk_TemPai.Checked)
             {
                 Txt_NomePai.Enabled = false;
             }
             else
             {
                 Txt_NomePai.Enabled = true;
+            }
+        }
+
+        private void txt_cep_Leave(object sender, EventArgs e)
+        {
+            string vCep = txt_cep.Text;
+            if (vCep != "")
+            {
+                if (vCep.Length == 8)
+                {
+                    if (Information.IsNumeric(vCep))
+                    {
+                        var vJson = ProjetoBDBiblioteca.Classes.CEP.GeraJSONCEP(vCep);
+                        CEP.Unit CEP = new CEP.Unit();
+                        CEP = ProjetoBDBiblioteca.Classes.CEP.DesSerializedClassUnit(vJson);
+                        txt_logradouro.Text = CEP.logradouro;
+                        txt_bairro.Text = CEP.bairro;
+                        txt_cidade.Text = CEP.localidade;
+
+                        Cmb_Estados.SelectedIndex = -1;
+                        for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                        {
+                            var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + CEP.uf + ")");
+                            if (vPos > 0)
+                            {
+                                Cmb_Estados.SelectedIndex = i;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

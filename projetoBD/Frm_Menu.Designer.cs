@@ -402,6 +402,7 @@
             txt_cep.Name = "txt_cep";
             txt_cep.Size = new Size(92, 26);
             txt_cep.TabIndex = 30;
+            txt_cep.Leave += txt_cep_Leave;
             // 
             // txt_logradouro
             // 

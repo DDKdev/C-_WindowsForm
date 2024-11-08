@@ -54,3 +54,4 @@ C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\projetoBD\ob
 C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\projetoBD\obj\Debug\net8.0-windows\projetoBD.csproj.Up2Date
 C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\projetoBD\obj\Debug\net8.0-windows\Interop.VBIDE.dll
 C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\projetoBD\obj\Debug\net8.0-windows\projetoBD.csproj.ResolveComReference.cache
+C:\Users\Daniel\OneDrive\Área de Trabalho\DB_Teste\CADASTROCLIENTE\projetoBD\obj\Debug\net8.0-windows\projetoBD.sourcelink.json
