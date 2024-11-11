@@ -16,6 +16,7 @@ namespace projetoBD
             Tls_principal.Items[2].ToolTipText = "Salvar";
             Tls_principal.Items[3].ToolTipText = "Apagar";
             Tls_principal.Items[4].ToolTipText = "Limpar";
+            LimparFormulario();
 
         }
 
@@ -27,7 +28,8 @@ namespace projetoBD
                 C = LeituraFormulario();
                 C.Validate();
                 C.ValidaComplemento();
-                MessageBox.Show("Cliente inserido com sucesso", "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string clienteJson = Cliente.SerializedClassUnit(C);
+                MessageBox.Show("Cliente inserido" + clienteJson + " com sucesso", "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ValidationException Ex)
             {
@@ -56,7 +58,7 @@ namespace projetoBD
 
         private void limparToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cliquei no Limpar");
+            LimparFormulario();
         }
 
         Cliente.Unit LeituraFormulario()
@@ -164,6 +166,26 @@ namespace projetoBD
                     }
                 }
             }
+        }
+
+        private void LimparFormulario()
+        {
+            Txt_ClienteId.Text = "";
+            txt_Nome.Text = "";
+            Txt_NomePai.Text = "";
+            txt_NomeMae.Text = "";
+            txt_cpf.Text = "";
+            txt_profissao.Text = "";
+            txt_telefone.Text = "";
+            txt_rendaFamiliar.Text = "";
+            txt_cep.Text = "";
+            txt_bairro.Text = "";
+            txt_cidade.Text = "";
+            txt_logradouro.Text = "";
+            txt_complemento.Text = "";
+            Cmb_Estados.SelectedIndex = -1;
+            chk_TemPai.Checked = false;
+            Rb_masc.Checked = true;
         }
     }
 }

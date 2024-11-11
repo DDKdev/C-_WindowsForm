@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using Microsoft.VisualBasic;
+using Newtonsoft.Json;
 
 namespace ProjetoBDBiblioteca.Classes
 {
@@ -84,7 +86,6 @@ namespace ProjetoBDBiblioteca.Classes
                     throw new ValidationException(sbrErrors.ToString());
                 }
             }
-
             public void ValidaComplemento()
             {
                 if(this.NomePai == this.NomeMae)
@@ -146,6 +147,20 @@ namespace ProjetoBDBiblioteca.Classes
         public class List
         {
             public List<Unit> ListUnit { get; set; }
+        }
+
+        //JsonConvert: Esta é uma classe estática da biblioteca Newtonsoft.Json usada para trabalhar com dados JSON em C#.
+        //DeserializeObject<Unit>: Este método converte (ou "desserializa") a string JSON(vJson) de volta para um objeto do tipo Unit.
+        public static Unit DesSerializedClassUnit (string vJson)
+        {
+            return JsonConvert.DeserializeObject<Unit>(vJson);
+        }
+
+        // JsonConvert: Esta é uma classe estática da biblioteca Newtonsoft.Json usada para trabalhar com dados JSON em C#.
+        // SerializeObject(unit): Este método converte (ou "serializa") o objeto unit em uma string JSON.
+        public static string SerializedClassUnit(Unit unit)
+        {
+            return JsonConvert.SerializeObject(unit);
         }
     }
 
