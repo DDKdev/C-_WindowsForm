@@ -3,6 +3,7 @@ using ProjetoBDBiblioteca.Classes;
 using ProjetoBDBiblioteca;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.ConstrainedExecution;
+using ProjetoBDBiblioteca.DataBases;
 
 namespace projetoBD
 {
@@ -29,6 +30,21 @@ namespace projetoBD
                 C.Validate();
                 C.ValidaComplemento();
                 string clienteJson = Cliente.SerializedClassUnit(C);
+
+                Fichario f = new Fichario("C:\\Users\\Daniel\\OneDrive\\Área de Trabalho\\DB_Teste\\Fichario");
+                if (f.status)
+                {
+                    f.Incluir(C.Id, clienteJson);
+                }
+                if (f.status)
+                {
+                    MessageBox.Show(f.mensagem, "projeto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("ERRO: " + f.mensagem, "projeto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 MessageBox.Show("Cliente inserido" + clienteJson + " com sucesso", "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ValidationException Ex)
@@ -43,17 +59,97 @@ namespace projetoBD
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cliquei no Abrir");
+            if (Txt_ClienteId.Text == "")
+            {
+                MessageBox.Show("Campo do ID vazio", "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Fichario f = new Fichario("C:\\Users\\Daniel\\OneDrive\\Área de Trabalho\\DB_Teste\\Fichario");
+                if (f.status)
+                {
+                    string clienteJson = f.Buscar(Txt_ClienteId.Text);
+                    Cliente.Unit c = new Cliente.Unit();
+                    c = Cliente.DesSerializedClassUnit(clienteJson);
+                    // Mostra o json que foi encontrado. caso contrário msotra um janela vazia
+                    MessageBox.Show("Seu cliente em JSON: " + clienteJson);
+                    if (clienteJson != "")
+                    {
+                        EscreverFormulario(c);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Erro: " + f.mensagem, "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cliquei no Salvar");
+            try
+            {
+                Cliente.Unit C = new Cliente.Unit();
+                C = LeituraFormulario();
+                C.Validate();
+                C.ValidaComplemento();
+                string clienteJson = Cliente.SerializedClassUnit(C);
+
+                Fichario f = new Fichario("C:\\Users\\Daniel\\OneDrive\\Área de Trabalho\\DB_Teste\\Fichario");
+                if (f.status)
+                {
+                    f.Alterar(C.Id, clienteJson);
+                }
+                if (f.status)
+                {
+                    MessageBox.Show(f.mensagem, "projeto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("ERRO: " + f.mensagem, "projeto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                MessageBox.Show("Cliente Alterado: " + clienteJson + " com sucesso", "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ValidationException Ex)
+            {
+                MessageBox.Show(Ex.Message, "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void apagarToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cliquei no Apagar");
+            if (Txt_ClienteId.Text == "")
+            {
+                MessageBox.Show("Campo do ID vazio", "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Fichario f = new Fichario("C:\\Users\\Daniel\\OneDrive\\Área de Trabalho\\DB_Teste\\Fichario");
+                if (f.status)
+                {
+                    Botao btn = new Botao("Frm_questao", "Você tem certeza da Exclusão?");
+                    btn.ShowDialog();
+                    if(btn.DialogResult == DialogResult.Yes)
+                    {
+                        f.Apagar(Txt_ClienteId.Text);
+                        
+                        if (f.status)
+                        {
+                            MessageBox.Show("Ok: " + f.mensagem, "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimparFormulario();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Err: " + f.mensagem, "Projeto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }                
+            }
         }
 
         private void limparToolStripButton_Click(object sender, EventArgs e)
@@ -186,6 +282,64 @@ namespace projetoBD
             Cmb_Estados.SelectedIndex = -1;
             chk_TemPai.Checked = false;
             Rb_masc.Checked = true;
+        }
+
+        void EscreverFormulario(Cliente.Unit C)
+        {
+
+            Txt_ClienteId.Text = C.Id;
+            txt_Nome.Text = C.Nome;
+            txt_NomeMae.Text = C.NomeMae;
+
+            if (C.TemPai == true)
+            {
+                chk_TemPai.Checked = true;
+                Txt_NomePai.Text = "";
+            }
+            else
+            {
+                chk_TemPai.Checked = false;
+                Txt_NomePai.Text = C.NomePai;
+            }
+
+            if (C.Genero == 0)
+            {
+                Rb_masc.Checked = true;
+            }
+            if (C.Genero == 1)
+            {
+                Rb_fem.Checked = true;
+            }
+            if (C.Genero == 3)
+            {
+                Rb_ind.Checked = true;
+            }
+
+            txt_cpf.Text = C.Cpf;
+            txt_cep.Text = C.Cep;
+            txt_logradouro.Text = C.Logradouro;
+            txt_complemento.Text = C.Complemento;
+            txt_cidade.Text = C.Cidade;
+            txt_bairro.Text = C.Bairro;
+            txt_telefone.Text = C.Telefone;
+            txt_profissao.Text = C.Profissao;
+
+            if (C.Estado == "")
+            {
+                Cmb_Estados.SelectedIndex = -1;
+            }
+            else
+            {
+                for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                {
+                    if (C.Estado == Cmb_Estados.Items[i].ToString())
+                    {
+                        Cmb_Estados.SelectedIndex = i;
+                    }
+                }
+            }
+
+            txt_rendaFamiliar.Text = C.RendaFamiliar.ToString();
         }
     }
 }

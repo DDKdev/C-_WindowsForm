@@ -3,18 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\projetoBD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2331C57E-3B06-411C-8859-85F9B8F3C1B6}|projetoBD.csproj|C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\projetoBD\\frm_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2331C57E-3B06-411C-8859-85F9B8F3C1B6}|projetoBD.csproj|c:\\users\\daniel\\onedrive\\\u00E1rea de trabalho\\db_teste\\cadastrocliente\\projetobd\\frm_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2331C57E-3B06-411C-8859-85F9B8F3C1B6}|projetoBD.csproj|solutionrelative:frm_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2331C57E-3B06-411C-8859-85F9B8F3C1B6}|projetoBD.csproj|c:\\users\\daniel\\onedrive\\\u00E1rea de trabalho\\db_teste\\cadastrocliente\\projetobd\\frm_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2331C57E-3B06-411C-8859-85F9B8F3C1B6}|projetoBD.csproj|C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\projetoBD\\frm_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2331C57E-3B06-411C-8859-85F9B8F3C1B6}|projetoBD.csproj|solutionrelative:frm_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BEC400C-A125-4F7C-A12A-241ECA68B589}|..\\ProjetoBDBiblioteca\\ProjetoBDBiblioteca.csproj|c:\\users\\daniel\\onedrive\\\u00E1rea de trabalho\\db_teste\\cadastrocliente\\projetobdbiblioteca\\classes\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BEC400C-A125-4F7C-A12A-241ECA68B589}|..\\ProjetoBDBiblioteca\\ProjetoBDBiblioteca.csproj|c:\\users\\daniel\\onedrive\\\u00E1rea de trabalho\\db_teste\\cadastrocliente\\projetobdbiblioteca\\classes\\cep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -36,41 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CEP.cs",
-              "DocumentMoniker": "C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\ProjetoBDBiblioteca\\Classes\\CEP.cs",
-              "RelativeDocumentMoniker": "..\\ProjetoBDBiblioteca\\Classes\\CEP.cs",
-              "ToolTip": "C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\ProjetoBDBiblioteca\\Classes\\CEP.cs",
-              "RelativeToolTip": "..\\ProjetoBDBiblioteca\\Classes\\CEP.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T12:08:31.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\ProjetoBDBiblioteca\\Classes\\Cliente.cs",
-              "RelativeDocumentMoniker": "..\\ProjetoBDBiblioteca\\Classes\\Cliente.cs",
-              "ToolTip": "C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\ProjetoBDBiblioteca\\Classes\\Cliente.cs",
-              "RelativeToolTip": "..\\ProjetoBDBiblioteca\\Classes\\Cliente.cs",
-              "ViewState": "AQIAAJQAAAAAAAAAAAA0wKQAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T12:07:41.204Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Frm_Menu.cs",
               "DocumentMoniker": "C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\projetoBD\\Frm_Menu.cs",
               "RelativeDocumentMoniker": "Frm_Menu.cs",
               "ToolTip": "C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\projetoBD\\Frm_Menu.cs",
               "RelativeToolTip": "Frm_Menu.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAA4wB0AAAAmAAAA",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAowG8AAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:52:06.439Z",
+              "WhenOpened": "2024-11-13T12:22:50.13Z",
               "EditorCaption": ""
             },
             {
@@ -82,7 +50,7 @@
               "ToolTip": "C:\\Users\\Daniel\\OneDrive\\\u00C1rea de Trabalho\\DB_Teste\\CADASTROCLIENTE\\projetoBD\\Frm_Menu.cs [Projeto]",
               "RelativeToolTip": "Frm_Menu.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T11:25:42.902Z",
+              "WhenOpened": "2024-11-13T12:22:45.498Z",
               "EditorCaption": " [Projeto]"
             }
           ]
